@@ -179,4 +179,8 @@ function endGame (listBomb, tenTativi, totTentativi) {
     messEl.classList.add('text-center', 'mt-5');
     messEl.append(messagge);
     document.querySelector('.wrap-grid').append(messEl);
+
+
+    // non rendere le square piu cliccabili
+    document.querySelector('.grid').classList.add('end');
 }

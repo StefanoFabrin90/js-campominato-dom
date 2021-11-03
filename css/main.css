@@ -28,7 +28,6 @@ main {
     margin: 0 auto;
     width: 600px;
     height: 600px;
-    border: 1px solid black;
 }
 
 .square {
@@ -51,6 +50,10 @@ main {
 
 .square.bomb {
     background-color: red;
+}
+
+.grid.end .square {
+    pointer-events: none;
 }
 
 footer {
