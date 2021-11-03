@@ -1,0 +1,39 @@
+.toolbar h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+main {
+    height: 800px;
+    background-color: lightblue;
+}
+
+.wrap-grid h3 {
+    text-align: center;
+    font-weight: bold;
+}
+
+
+/* griglia */
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    width: 600px;
+    height: 600px;
+    border: 1px solid black;
+}
+
+.square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.square.clicked {
+    background-color: dodgerblue;
+}
