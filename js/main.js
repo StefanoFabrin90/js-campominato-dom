@@ -151,9 +151,32 @@ function clickSquare (square, listBomb, tenTativi, totTentativi) {
 // funzione fine gioco
 
 function endGame (listBomb, tenTativi, totTentativi) {
-    // ottenere tutti i div  = queryselectorAll
+    // ottenere tutti i div  = queryselectorAll ----> Array
     const squareS = document.querySelectorAll('.square')
     console.log(squareS);
 
-    // mostrare tutte le bombe
+    // mostrare tutte le bombe, si parte da 0 perche e l'indice dell array
+    for (let i = 0; i < squareS.length; i++) {
+        const square = squareS[i];
+        const squareNumber = parseInt(square.innerText);
+
+        if(listBomb.includes(squareNumber)) {
+            square.classList.add('bomb');
+        }
+    }
+
+
+    // testo messaggio di fine partita
+    let messagge = `Complimenti hai vinto... Hai indovinato i ${totTentativi} tentativi validi!!!`
+
+    // end
+    if (tenTativi.length < totTentativi) {
+        messagge = `Mi dispiace hai perso... Hai indovinato ${tenTativi.length} tentativi. Gioca ancora...`
+    }
+
+    // creazione elemento messaggio
+    const messEl = document.createElement('div');
+    messEl.classList.add('text-center', 'mt-5');
+    messEl.append(messagge);
+    document.querySelector('.wrap-grid').append(messEl);
 }
