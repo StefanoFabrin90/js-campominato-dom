@@ -130,8 +130,30 @@ function clickSquare (square, listBomb, tenTativi, totTentativi) {
 
     // capire se ho colpito la bomba 
     if (listBomb.includes(num)) {
-        console.log('bomba');
+        // console.log('bomba');
+        endGame (listBomb, tenTativi, totTentativi)
+
     } else if (!tenTativi.includes(num)) {
+        // aggiunger colore di sfondo
+        square.classList.add('safe');
+
+        // aggiungere il numero alla lista dei tentativi
+        tenTativi.push(num);
         
+        // controllare se il numero dei tentativi sono uguali al  numero massimo dei tentativi
+        if (tenTativi.length === totTentativi){
+            endGame (listBomb, tenTativi, totTentativi)
+        }
     }
+}
+
+
+// funzione fine gioco
+
+function endGame (listBomb, tenTativi, totTentativi) {
+    // ottenere tutti i div  = queryselectorAll
+    const squareS = document.querySelectorAll('.square')
+    console.log(squareS);
+
+    // mostrare tutte le bombe
 }
