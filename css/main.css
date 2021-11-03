@@ -39,6 +39,20 @@ main {
     cursor: pointer;
 }
 
-.square.clicked {
-    background-color: dodgerblue;
+.square.safe,
+.square.bomb {
+    color: white;
+    cursor: default;
+}
+
+.square.safe{
+    background-color: dodgerblue; 
+}
+
+.square.bomb {
+    background-color: red;
+}
+
+footer {
+    background-color:#f8f9fa;
 }

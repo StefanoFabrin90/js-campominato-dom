@@ -53,6 +53,11 @@ setBtn.addEventListener('click', () => {
     const listBomb = genBombos(cellsNumber, 16);
     console.log(listBomb);
 
+    // lista dei tentativi
+    const tenTativi = [];
+    const totTentativi = cellsNumber - listBomb.length;
+    console.log(totTentativi);
+
     // generazione grid
     const grid = document.createElement ('div');
     grid.classList.add('grid');
@@ -66,9 +71,9 @@ setBtn.addEventListener('click', () => {
         grid.append(square);
 
         // cliccabile
-        square.addEventListener('click', function(){
-            console.log(square);
-            square.classList.add('clicked');
+        square.addEventListener('click', function() {
+            // square.classList.add('clicked');
+            clickSquare (square, listBomb, tenTativi, totTentativi)
         });
     }
 
@@ -79,7 +84,7 @@ setBtn.addEventListener('click', () => {
 
 
 
-// funzioni
+// FUNZIONI=
 
 function genSquare (num, cells) {
     const node = document.createElement('div');
@@ -109,9 +114,24 @@ function genBombos(totCells, totBombs){
 } 
 
 
-
 // numero random 
 
 function numRandom (min, max){
     return Math.floor( Math.random() * (max - min + 1) ) + min;
+}
+
+
+// funzione click
+
+function clickSquare (square, listBomb, tenTativi, totTentativi) {
+    // ottenere il numero all interno del div square
+    const num = parseInt(square.innerText); //posso usare innertext perche all interno del div non ho html
+    console.log(num);
+
+    // capire se ho colpito la bomba 
+    if (listBomb.includes(num)) {
+        console.log('bomba');
+    } else if (!tenTativi.includes(num)) {
+        
+    }
 }
