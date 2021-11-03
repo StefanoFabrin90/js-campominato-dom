@@ -2,6 +2,7 @@ body {
     max-width: 1170px;
     margin: 0 auto;
     font-family: sans-serif;
+    margin-top: 20px;
 }
 
 .toolbar h1 {
