@@ -10,6 +10,11 @@ body {
     margin-left: 10px;
 }
 
+.toolbar .hard {
+    display: flex;
+    align-items: center;
+}
+
 main {
     height: 800px;
     background-color: lightblue;
